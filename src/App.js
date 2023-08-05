@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from 'react'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [showHello,setShowHello]  = useState(false)  
+     let helloDiv =<div></div>
+     let hellodiv =<div></div>
+let hello = <div></div>
+if (showHello){
+
+helloDiv = <div>Hello !!!</div>
+hellodiv = <div onClick={() => setShowHello(false)}style={{ 
+  width: 125 ,
+  height: 125, 
+padding: 20,
+border:'1px solid black',                        
+cursor: 'pointer'
+}}><img src='https://cdn-icons-png.flaticon.com/128/2767/2767146.png'/>
+</div>
+} else {
+  hello =  <div onClick={() => setShowHello(true)} style={{
+    width: 125 ,
+    height: 125, 
+  padding: 20,
+  border:'1px solid black',                        
+  cursor: 'pointer'
+}}> 
+<  img src='https://cdn-icons-png.flaticon.com/128/709/709612.png'/></div>
+}
+return(
+  <div>
+    
+                  {hellodiv}
+                  
+                
+  
+ 
+                  {helloDiv}{hello}</div>
+)
 }
 
-export default App;
+export default App
